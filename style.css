@@ -1,0 +1,32 @@
+
+body {
+    background-color: #001f3f;
+    color: gold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+.logo {
+    width: 120px;
+    margin: 20px auto;
+}
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.car img {
+    width: 220px;
+    height: auto;
+    border-radius: 8px;
+}
+.whatsapp-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 20px;
+}
