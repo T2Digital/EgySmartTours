@@ -51,7 +51,7 @@ const places = [
   { name: "متحف الحضارة", location: [31.1310, 30.0600], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294201-d308851", image: "https://images.unsplash.com/photo-1591117207239-99a08b78ebb7" },
   // Lounge (Purple: #800080)
   { name: "كازان", location: [31.2400, 30.0540], type: "lounge", color: "#800080", url: "https://kazan.com", image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b" },
-  { name: "ذا لندن", location: [31.2410, 30.0535], type: "lounge", color: "#800080", url: "https://thelondon.com", image: "https://images.unsplash.com/photo-1514933651103-005eec06 naps4b" },
+  { name: "ذا لندن", location: [31.2410, 30.0535], type: "lounge", color: "#800080", url: "https://thelondon.com", image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b" },
   { name: "ليمون تري", location: [31.2420, 30.0530], type: "lounge", color: "#800080", url: "https://lemontree.com", image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b" },
   { name: "ماكسيم", location: [31.2430, 30.0525], type: "lounge", color: "#800080", url: "https://maxim.com", image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b" },
   // Nile Cruise (Blue: #0000FF)
@@ -424,17 +424,31 @@ window.saveCalendar = function() {
   }
 };
 
-// Generate PDF with html2pdf using the hidden template
-window.generatePDF = async function() {
+// Generate PDF with jsPDF
+window.generatePDF = function() {
   try {
-    if (typeof html2pdf === 'undefined') {
-      throw new Error('فشل تحميل مكتبة html2pdf. تأكد من اتصالك بالإنترنت.');
+    if (typeof jsPDF === 'undefined' || typeof jsPDF === 'undefined') {
+      throw new Error('فشل تحميل مكتبة jsPDF أو autotable. تأكد من اتصالك بالإنترنت.');
     }
 
-    const pdfTemplate = document.getElementById('pdf-template');
-    const pdfTableBody = document.getElementById('pdf-table-body');
-    pdfTableBody.innerHTML = '';
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
 
+    // Add custom font (Tajawal)
+    doc.addFont('https://cdn.jsdelivr.net/npm/@fontsource/tajawal@5.0.8/files/tajawal-all-400-normal.woff', 'Tajawal', 'normal');
+    doc.setFont('Tajawal');
+
+    // Header
+    doc.setTextColor(255, 215, 0); // Yellow #FFD700
+    doc.setFillColor(18, 18, 18); // Dark #121212
+    doc.rect(10, 10, 190, 10, 'F');
+    doc.text('جدول NileVibe الأسبوعي', 105, 16, { align: 'center' });
+
+    // Table Data
     const dayNamesAr = {
       saturday: 'السبت',
       sunday: 'الأحد',
@@ -445,37 +459,46 @@ window.generatePDF = async function() {
       friday: 'الجمعة'
     };
 
-    Object.keys(calendarData).forEach(day => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td style="padding: 10px; background-color: #1A1A1A; color: #FFD700; border: 1px solid #FFD700; text-align: center;">${dayNamesAr[day]}</td>
-        <td style="padding: 10px; background-color: #1A1A1A; color: #FFD700; border: 1px solid #FFD700; text-align: center;">${calendarData[day].morning || '-'}</td>
-        <td style="padding: 10px; background-color: #1A1A1A; color: #FFD700; border: 1px solid #FFD700; text-align: center;">${calendarData[day].afternoon || '-'}</td>
-        <td style="padding: 10px; background-color: #1A1A1A; color: #FFD700; border: 1px solid #FFD700; text-align: center;">${calendarData[day].evening || '-'}</td>
-      `;
-      pdfTableBody.appendChild(row);
+    const tableData = Object.keys(calendarData).map(day => [
+      dayNamesAr[day],
+      calendarData[day].morning || '-',
+      calendarData[day].afternoon || '-',
+      calendarData[day].evening || '-'
+    ]);
+
+    doc.autoTable({
+      head: [['اليوم', 'الصباح', 'الظهر', 'المساء']],
+      body: tableData,
+      startY: 25,
+      theme: 'plain',
+      styles: {
+        font: 'Tajawal',
+        textColor: [255, 215, 0], // Yellow #FFD700
+        fillColor: [26, 26, 26], // Darker #1A1A1A
+        lineColor: [255, 215, 0], // Yellow #FFD700
+        lineWidth: 0.5,
+        halign: 'center',
+        cellPadding: 5
+      },
+      headStyles: {
+        fillColor: [18, 18, 18], // Dark #121212
+        textColor: [255, 215, 0] // Yellow #FFD700
+      }
     });
 
-    const opt = {
-      margin: 10,
-      filename: 'NileVibe_Schedule.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
-    const pdfOutput = await html2pdf().set(opt).from(pdfTemplate).output('blob');
-    if (!pdfOutput || !(pdfOutput instanceof Blob) || pdfOutput.size === 0 || pdfOutput.type !== 'application/pdf') {
-      throw new Error('فشل إنشاء ملف PDF، الملف فاضي أو تالف.');
+    // Footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setTextColor(176, 176, 176); // Gray #B0B0B0
+      doc.text('Powered by NileVibe - اكتشف القاهرة بفخامة', 105, 290, { align: 'center' });
     }
 
-    saveAs(pdfOutput, 'NileVibe_Schedule.pdf');
+    // Save PDF
+    doc.save('NileVibe_Schedule.pdf');
     showNotification('تم تحميل البرنامج كـ PDF! تحقق من مجلد التحميلات.', 'success');
   } catch (error) {
-    showNotification(
-      `فشل في إنشاء الـ PDF: ${error.message}. جرب متصفح آخر أو تأكد من اتصالك بالإنترنت.`,
-      'error'
-    );
+    showNotification(`فشل في إنشاء الـ PDF: ${error.message}. جرب متصفح آخر أو تأكد من الاتصال بالإنترنت.`, 'error');
     console.error('PDF Generation Error:', error);
   }
 };
