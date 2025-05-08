@@ -824,8 +824,8 @@ form button:hover {
 }
 @media (max-width: 480px) {
   .gallery-slider .swiper-slide img {
-    height: 150px; /* زيادة الارتفاع من 120px إلى 150px */
-    max-height: 150px;
+    height: 250px; /* زيادة الارتفاع من 120px إلى 150px */
+    max-height: 250px;
     max-width: 300px; /* زيادة العرض الأقصى من 250px إلى 300px */
   }
 }
