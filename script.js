@@ -37,7 +37,7 @@ const places = [
   { name: "كاي", location: [31.2210, 30.0525], type: "nightlife", color: "#FF0000", url: "https://kai.com", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819" },
   { name: "أوفيد", location: [31.2220, 30.0515], type: "nightlife", color: "#FF0000", url: "https://ofid.com", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819" },
   { name: "جراود شيراتون", location: [31.2230, 30.0505], type: "nightlife", color: "#FF0000", url: "https://crowdsheraton.com", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819" },
-  { name: "الأهرامات", location: [31.1342, 29.9792], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294202-d308847", image: "https://i.ibb.co/j1Td5Rr/94a8c96e916653f9a948442bba9c3a24.jpge62" },
+  { name: "الأهرامات", location: [31.1342, 29.9792], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294202-d308847", image: "https://i.ibb.co/j1Td5Rr/94a8c96e916653f9a948442bba9c3a24.jpg" },
   { name: "خان الخليلي", location: [31.2622, 30.0478], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294201-d308844", image: "https://images.unsplash.com/photo-1602774897447-16c7273db418" },
   { name: "المتحف المصري", location: [31.2336, 30.0481], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294201-d308838", image: "https://images.unsplash.com/photo-1591117207239-99a08b78ebb7" },
   { name: "برج القاهرة", location: [31.2243, 30.0460], type: "tourist", color: "#FFD700", url: "https://www.tripadvisor.com/Attraction_Review-g294201-d308846", image: "https://images.unsplash.com/photo-1619687817846-4a497 rim4" },
