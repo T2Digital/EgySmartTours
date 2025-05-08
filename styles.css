@@ -777,7 +777,7 @@ form button:hover {
 /* Gallery Slider Styling */
 .gallery-slider {
   max-width: 100%;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 .gallery-slider .swiper-slide {
   display: flex;
