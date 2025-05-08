@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css">
   <link rel="stylesheet" href="https://unpkg.com/mapbox-gl@2.9.0/dist/mapbox-gl.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400&display=swap" rel="stylesheet">
+  <!-- Swiper.js for Gallery Slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
   <div class="header">
@@ -50,6 +51,10 @@
         <div id="car-grid"></div>
       </div>
       <form id="booking-form">
+        <label>الاسم</label>
+        <input type="text" id="name" placeholder="أدخل اسمك" required>
+        <label>رقم الموبايل</label>
+        <input type="tel" id="mobile" placeholder="مثل: +201234567890" pattern="\+?[0-9]{10,15}" required>
         <label>تاريخ الوصول</label>
         <input type="date" id="start-date" required>
         <label>تاريخ المغادرة</label>
@@ -110,6 +115,21 @@
     </div>
   </section>
 
+  <!-- Gallery Section (New) -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>معرض الصور</h2>
+      <div class="swiper gallery-slider">
+        <div class="swiper-wrapper">
+          <!-- Slides will be populated by JavaScript -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
@@ -148,6 +168,8 @@
   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <!-- Swiper.js for Gallery Slider -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
