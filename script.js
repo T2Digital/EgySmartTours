@@ -79,13 +79,13 @@ function initMap() {
 
       document.getElementById('virtual-tour-btn').addEventListener('click', () => {
         const tourPlaces = [
-          { location: [31.1342, 29.9792], name: "الأهرامات" },
-          { location: [31.2396, 30.0491], name: "زووبا" },
-          { location: [31.2108, 30.0626], name: "Cairo Jazz Club" },
-          { location: [31.2336, 30.0481], name: "المتحف المصري" },
-          { location: [31.2243, 30.0460], name: "برج القاهرة" },
-          { location: [31.2425, 30.0505], name: "تبولة" },
-          { location: [31.2300, 30.0450], name: "يخت النيل" }
+          { location: [31.1342, 29.9792], name: "الأهرامات", image: "https://images.unsplash.com/photo-1573051129930-39527d6d8e62" },
+          { location: [31.2396, 30.0491], name: "زووبا", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" },
+          { location: [31.2108, 30.0626], name: "Cairo Jazz Club", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819" },
+          { location: [31.2336, 30.0481], name: "المتحف المصري", image: "https://images.unsplash.com/photo-1591117207239-99a08b78ebb7" },
+          { location: [31.2243, 30.0460], name: "برج القاهرة", image: "https://images.unsplash.com/photo-1619687817846-4a497 rim4" },
+          { location: [31.2425, 30.0505], name: "تبولة", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" },
+          { location: [31.2300, 30.0450], name: "يخت النيل", image: "https://images.unsplash.com/photo-1516426122075-c23e6d15a7f2" }
         ];
         const label = document.getElementById('virtual-tour-label');
         let i = 0;
@@ -93,11 +93,15 @@ function initMap() {
         const tourInterval = setInterval(() => {
           if (i < tourPlaces.length) {
             map.flyTo({ center: tourPlaces[i].location, zoom: 15 });
-            label.textContent = tourPlaces[i].name;
+            label.innerHTML = `
+              <img src="${tourPlaces[i].image}" alt="${tourPlaces[i].name}">
+              <span>${tourPlaces[i].name}</span>
+            `;
             i++;
           } else {
             clearInterval(tourInterval);
             label.style.display = 'none';
+            label.innerHTML = '';
           }
         }, 3000);
         showNotification('بدأت الجولة الافتراضية!', 'success');
@@ -230,6 +234,8 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
   const days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) || 1;
 
   const bookingData = {
+    name: document.getElementById('name').value,
+    mobile: document.getElementById('mobile').value,
     car: selectedCar.name,
     start_date: document.getElementById('start-date').value,
     end_date: document.getElementById('end-date').value,
@@ -243,6 +249,8 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
 
   const whatsappMessage = `
 حجز جديد من NileVibe:
+الاسم: ${bookingData.name}
+رقم الموبايل: ${bookingData.mobile}
 السيارة: ${bookingData.car}
 تاريخ الوصول: ${bookingData.start_date}
 تاريخ المغادرة: ${bookingData.end_date}
@@ -552,6 +560,56 @@ window.generatePDF = async function() {
   }
 };
 
+// Gallery Slider Initialization (New)
+function initGallerySlider() {
+  const gallerySlides = document.querySelector('.gallery-slider .swiper-wrapper');
+  const selectedPlaces = [
+    places.find(p => p.name === 'الأهرامات'),
+    places.find(p => p.name === 'زووبا'),
+    places.find(p => p.name === 'Cairo Jazz Club'),
+    places.find(p => p.name === 'يخت النيل'),
+    places.find(p => p.name === 'المتحف المصري')
+  ];
+
+  selectedPlaces.forEach(place => {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    slide.innerHTML = `
+      <img src="${place.image}" alt="${place.name}">
+      <span>${place.name}</span>
+    `;
+    gallerySlides.appendChild(slide);
+  });
+
+  new Swiper('.gallery-slider', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
+    }
+  });
+}
+
 // Utility Functions
 function showNotification(message, type = 'success') {
   Toastify({
@@ -581,4 +639,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCarGrid();
   loadCalendarData();
   renderScheduleTable();
+  initGallerySlider(); // Initialize gallery slider
 });
