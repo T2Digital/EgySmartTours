@@ -169,16 +169,17 @@ function renderPlacesList(filteredPlaces) {
 // Booking Logic
 const cars = {
   economy: [
-    { name: "Nissan Sentra", price: 450, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/JW0Fg1L6/2e84f0dcd7933fb7bb28d2c3392e9c9f.png" },
-    { name: "Kia Cerato", price: 500, details: "4 ركاب، مريحة", image: "https://i.ibb.co/dJxmRxFs/kia-cerato.png" },
-    { name: "Hyundai Elantra", price: 480, details: "4 ركاب، موفرة", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c" },
-    { name: "Toyota Corolla", price: 470, details: "4 ركاب، متينة", image: "https://images.unsplash.com/photo-1592805723127-0a2c4d4e9d62" },
-    { name: "Mitsubishi Lancer", price: 460, details: "4 ركاب، شبابية", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" }
+    { name: "Nissan Sentra", price: 2000, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/JW0Fg1L6/2e84f0dcd7933fb7bb28d2c3392e9c9f.png" },
+    { name: "Kia Cerato", price: 2000, details: "4 ركاب، مريحة", image: "https://i.ibb.co/dJxmRxFs/kia-cerato.png" },
+    { name: "Hyundai Elantra", price: 2000, details: "4 ركاب، موفرة", image: "https://i.ibb.co/q38Gjg92/hyundai-elantra-cn7-large.png" },
+    { name: "Toyota Corolla", price: 2000, details: "4 ركاب، متينة", image: "https://i.ibb.co/jkrCQHwg/Black-1170x395.png" },
+    { name: "Nissan Suny", price: 1500, details: "4 ركاب، شبابية", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" }
   ],
   luxury: [
-    { name: "Mercedes C-Class", price: 2000, details: "5 ركاب، فخمة", image: "https://images.unsplash.com/photo-1606220838315-7b6b3e3d4f39" },
-    { name: "BMW 3 Series", price: 2200, details: "5 ركاب، رياضية", image: "https://images.unsplash.com/photo-1607141815636-15eafc9e6b08" },
-    { name: "Audi A4", price: 2100, details: "5 ركاب، تكنولوجيا متقدمة", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" },
+    { name: "Mercedes J-Class", price: 15000, details: "5 ركاب، فخمة", image: "https://images.unsplash.com/photo-1606220838315-7b6b3e3d4f39" },
+    { name: "Mercedes C-Class", price: 10000, details: "5 ركاب، فخمة", image: "https://images.unsplash.com/photo-1606220838315-7b6b3e3d4f39" },
+    { name: "Mercedes viano", price: 2200, details: "5 ركاب، رياضية", image: "https://images.unsplash.com/photo-1607141815636-15eafc9e6b08" },
+    { name: "Jeep ", price: 2100, details: "5 ركاب، تكنولوجيا متقدمة", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" },
     { name: "Volvo S60", price: 2300, details: "5 ركاب، أمان عالي", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" },
     { name: "Range Rover", price: 3500, details: "5 ركاب، فاخرة جدًا", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" }
   ]
