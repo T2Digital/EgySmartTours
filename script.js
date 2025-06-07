@@ -169,7 +169,7 @@ function renderPlacesList(filteredPlaces) {
 // Booking Logic
 const cars = {
   economy: [
-    { name: "Nissan Sentra", price: 450, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/tM7RtFSv/centra.png" },
+    { name: "Nissan Sentra", price: 450, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/JW0Fg1L6/2e84f0dcd7933fb7bb28d2c3392e9c9f.png" },
     { name: "Kia Cerato", price: 500, details: "4 ركاب، مريحة", image: "https://i.ibb.co/dJxmRxFs/kia-cerato.png" },
     { name: "Hyundai Elantra", price: 480, details: "4 ركاب، موفرة", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c" },
     { name: "Toyota Corolla", price: 470, details: "4 ركاب، متينة", image: "https://images.unsplash.com/photo-1592805723127-0a2c4d4e9d62" },
