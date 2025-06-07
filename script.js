@@ -263,7 +263,7 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
 السعر الإجمالي: ${bookingData.total_price} جنيه
 ملاحظة: يتم دفع المبلغ بالكامل بمجرد الاستلام
   `.trim();
-  const whatsappUrl = `https://wa.me/+201234567890?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/+201030956097?text=${encodeURIComponent(whatsappMessage)}`;
   window.open(whatsappUrl, '_blank');
 
   showNotification('تم إرسال الحجز إلى واتساب!', 'success');
