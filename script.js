@@ -261,7 +261,7 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
 موقع التسليم: ${bookingData.dropoff_location}
 مدة الرحلة: ${bookingData.trip_duration} يوم
 السعر الإجمالي: ${bookingData.total_price} جنيه
-ملاحظة: يتم دفع المبلغ بالكامل بمجرد الاستلام
+ملاحظة: يتم الدفع بعد الاستلام
   `.trim();
   const whatsappUrl = `https://wa.me/+201030956097?text=${encodeURIComponent(whatsappMessage)}`;
   window.open(whatsappUrl, '_blank');
