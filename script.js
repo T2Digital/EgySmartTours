@@ -80,11 +80,11 @@ function initMap() {
       document.getElementById('virtual-tour-btn').addEventListener('click', () => {
         const tourPlaces = [
           { location: [31.1342, 29.9792], name: "الأهرامات", image: "https://i.ibb.co/j1Td5Rr/94a8c96e916653f9a948442bba9c3a24.jpg" },
-          { location: [31.2396, 30.0491], name: "زووبا", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" },
+          { location: [31.2396, 30.0491], name: "زووبا", image: "https://i.ibb.co/7dZH1VjJ/unnamed.webp" },
           { location: [31.2108, 30.0626], name: "Cairo Jazz Club", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819" },
           { location: [31.2336, 30.0481], name: "المتحف المصري", image: "https://images.unsplash.com/photo-1591117207239-99a08b78ebb7" },
           { location: [31.2243, 30.0460], name: "برج القاهرة", image: "https://images.unsplash.com/photo-1619687817846-4a497 rim4" },
-          { location: [31.2425, 30.0505], name: "تبولة", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" },
+          { location: [31.2425, 30.0505], name: "تبولة", image: "https://i.ibb.co/B2FyRYXD/18eb5d7d-3adc-49d9-8b6c-9a9692a1df72-lg.jpg" },
           { location: [31.2300, 30.0450], name: "يخت النيل", image: "https://images.unsplash.com/photo-1516426122075-c23e6d15a7f2" }
         ];
         const label = document.getElementById('virtual-tour-label');
