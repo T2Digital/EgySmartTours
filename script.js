@@ -249,7 +249,7 @@ document.getElementById('booking-form').addEventListener('submit', (e) => {
   };
 
   const whatsappMessage = `
-حجز جديد من NileVibe:
+حجز جديد من EgySmartTours:
 الاسم: ${bookingData.name}
 رقم الموبايل: ${bookingData.mobile}
 السيارة: ${bookingData.car}
@@ -472,7 +472,7 @@ window.generatePDF = async function() {
     // Title
     doc.setFontSize(28);
     doc.setTextColor('#FFD700');
-    doc.text('جدول NileVibe الأسبوعي', 545, 40, { align: 'right' });
+    doc.text('جدول EgySmartTours الأسبوعي', 545, 40, { align: 'right' });
 
     // Table
     const tableData = Object.keys(calendarData).map(day => {
@@ -529,7 +529,7 @@ window.generatePDF = async function() {
     // Footer
     doc.setFontSize(10);
     doc.setTextColor('#B0B0B0');
-    doc.text('Powered by NileVibe - اكتشف القاهرة بفخامة', 297.5, 822, { align: 'center' });
+    doc.text('Powered by EgySmartTours - اكتشف القاهرة بفخامة', 297.5, 822, { align: 'center' });
 
     // Save PDF
     const pdfBlob = doc.output('blob');
@@ -539,13 +539,13 @@ window.generatePDF = async function() {
 
     // Use FileSaver.js to download
     try {
-      saveAs(pdfBlob, 'NileVibe_Schedule.pdf');
+      saveAs(pdfBlob, 'EgySmartTours_Schedule.pdf');
       showNotification('تم تحميل البرنامج كـ PDF! تحقق من مجلد التحميلات.', 'success');
     } catch (saveError) {
       console.error('FileSaver Error:', saveError);
       const url = URL.createObjectURL(pdfBlob);
       showNotification(
-        `فشل التحميل التلقائي. <a href="${url}" download="NileVibe_Schedule.pdf">اضغط هنا لتحميل الملف يدويًا</a>`,
+        `فشل التحميل التلقائي. <a href="${url}" download="EgySmartTours_Schedule.pdf">اضغط هنا لتحميل الملف يدويًا</a>`,
         'error'
       );
       setTimeout(() => {
@@ -629,7 +629,7 @@ window.scrollToSection = function(id) {
 };
 
 window.openWhatsApp = function() {
-  const message = 'مرحبًا، أود الاستفسار عن خدمات NileVibe!';
+  const message = 'مرحبًا، أود الاستفسار عن خدمات EgySmartTours!';
   const url = `https://wa.me/+201234567890?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
 };
