@@ -170,7 +170,7 @@ function renderPlacesList(filteredPlaces) {
 const cars = {
   economy: [
     { name: "Nissan Sentra", price: 450, details: "4 ركاب، اقتصادية", image: "https://images.unsplash.com/photo-1588636142475-a62d56692870" },
-    { name: "Kia Cerato", price: 500, details: "4 ركاب، مريحة", image: "https://images.unsplash.com/photo-1618843473801-9f7a78c3b3b8" },
+    { name: "Kia Cerato", price: 500, details: "4 ركاب، مريحة", image: "https://i.ibb.co/dJxmRxFs/kia-cerato.png" },
     { name: "Hyundai Elantra", price: 480, details: "4 ركاب، موفرة", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c" },
     { name: "Toyota Corolla", price: 470, details: "4 ركاب، متينة", image: "https://images.unsplash.com/photo-1592805723127-0a2c4d4e9d62" },
     { name: "Mitsubishi Lancer", price: 460, details: "4 ركاب، شبابية", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" }
