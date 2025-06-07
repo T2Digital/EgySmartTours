@@ -2,9 +2,9 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWhtYXR5YTAwIiwiYSI6ImNtYWJxbTFoNDExNXEyanIwa2xxcmJwdWoifQ.0WU0DyTqRl9TjV-Go2O2LA';
 let map, markers = [];
 const places = [
-  { name: "زووبا", location: [31.2396, 30.0491], type: "restaurant", color: "#00FF00", url: "https://zoobaeats.com", menu: "zooba_menu.pdf", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" },
-  { name: "كشري أبو طارق", location: [31.2400, 30.0510], type: "restaurant", color: "#00FF00", url: "https://abutarek.com", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c" },
-  { name: "تبولة", location: [31.2425, 30.0505], type: "restaurant", color: "#00FF00", url: "https://taboula.com", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" },
+  { name: "زووبا", location: [31.2396, 30.0491], type: "restaurant", color: "#00FF00", url: "https://www.zoobaeats.com/", menu: "zooba_menu.pdf", image: "https://i.ibb.co/7dZH1VjJ/unnamed.webp" },
+  { name: "كشري أبو طارق", location: [31.2400, 30.0510], type: "restaurant", color: "#00FF00", url: "https://abu-tarek.com/", image: "https://i.ibb.co/4wQ472FD/unnamed-1.webp" },
+  { name: "تبولة", location: [31.2425, 30.0505], type: "restaurant", color: "#00FF00", url: "https://maps.app.goo.gl/Qif94sgmxkof5KwX9", image: "https://i.ibb.co/B2FyRYXD/18eb5d7d-3adc-49d9-8b6c-9a9692a1df72-lg.jpg" },
   { name: "فلفلة", location: [31.2380, 30.0520], type: "restaurant", color: "#00FF00", url: "https://felfela.com", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c" },
   { name: "نعمة", location: [31.2410, 30.0490], type: "restaurant", color: "#00FF00", url: "https://na3ma.com", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" },
   { name: "سوق العصر", location: [31.2375, 30.0515], type: "restaurant", color: "#00FF00", url: "https://soqal3asr.com", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c" },
@@ -180,8 +180,8 @@ const cars = {
     { name: "Mercedes J-Class", price: 20000, details: "5 ركاب، فخمة", image: "https://i.ibb.co/Vp0cJZV5/b864bb1295438b06a9f6d45bc23e8ae8.png" },
     { name: "Mercedes C-Class", price: 15000, details: "5 ركاب، رياضية", image: "https://i.ibb.co/hkcxB1n/INTRO-24-MB-C-Class.png" },
     { name: "Mercedes viano ", price: 10000, details: "5 ركاب، تكنولوجيا متقدمة", image: "https://i.ibb.co/cch0FNm2/v-class.png" },
-    { name: "Jeep", price: 15000, details: "5 ركاب، أمان عالي", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" },
-    { name: "Range Rover", price: 3500, details: "5 ركاب، فاخرة جدًا", image: "https://images.unsplash.com/photo-1605557626697-2b86e8f8319a" }
+    { name: "Jeep", price: 15000, details: "5 ركاب، أمان عالي", image: "https://i.ibb.co/NdW5tR37/2025-jeep-grand-cherokee-4-overland-032-pw7.png" },
+    { name: "Range Rover", price: 3500, details: "5 ركاب، فاخرة جدًا", image: "https://i.ibb.co/XrY1bVTN/d3fde177ea22f4701d59a12e21cb12fd.png" }
   ]
 };
 
@@ -472,7 +472,7 @@ window.generatePDF = async function() {
     // Title
     doc.setFontSize(28);
     doc.setTextColor('#FFD700');
-    doc.text('جدول EgySmartTours الأسبوعي', 545, 40, { align: 'right' });
+    doc.text('الأسبوعي EgySmartTours جدول', 545, 40, { align: 'right' });
 
     // Table
     const tableData = Object.keys(calendarData).map(day => {
