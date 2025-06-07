@@ -169,19 +169,19 @@ function renderPlacesList(filteredPlaces) {
 // Booking Logic
 const cars = {
   economy: [
-    { name: "Nissan Sentra", price: 2000, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/JW0Fg1L6/2e84f0dcd7933fb7bb28d2c3392e9c9f.png" },
-    { name: "Kia Cerato", price: 2000, details: "4 ركاب، مريحة", image: "https://i.ibb.co/dJxmRxFs/kia-cerato.png" },
+    { name: "Nissan Sentra", price: 2000, details: "4 ركاب، اقتصادية", image: "https://i.ibb.co/jPtwB556/f9d5b7b9687fb813f893d16f6e749abf.png" },
+    { name: "Kia Cerato", price: 2000, details: "4 ركاب، مريحة", image: "https://i.ibb.co/qYq20YpG/179042585764e2903a7bf1d914259454-600-0.png" },
     { name: "Hyundai Elantra", price: 2000, details: "4 ركاب، موفرة", image: "https://i.ibb.co/q38Gjg92/hyundai-elantra-cn7-large.png" },
     { name: "Toyota Corolla", price: 2000, details: "4 ركاب، متينة", image: "https://i.ibb.co/jkrCQHwg/Black-1170x395.png" },
     { name: "Nissan Sunny", price: 1500, details: "4 ركاب، شبابية", image: "https://i.ibb.co/vCWphnhW/NISSAN-1-2-201526470-jpg-ximg-l-12-m-smart.png" }
   ],
   luxury: [
     { name: "Mercedes-Maybach", price: 25000, details: "5 ركاب، فخمة", image: "https://i.ibb.co/60vWGzBf/mercedes-maybach-s-class-Xanh-Nautic.png" },
-    { name: "Mercedes J-Class", price: 20000, details: "5 ركاب، فخمة", image: "https://i.ibb.co/Vp0cJZV5/b864bb1295438b06a9f6d45bc23e8ae8.png" },
+    { name: "Mercedes J-Class", price: 20000, details: "5 ركاب، فخمة", image: "https://i.ibb.co/22Dr634/2025-mercedes-benz-classe-g-eq-1-580e-ext-032-051.png" },
     { name: "Mercedes C-Class", price: 15000, details: "5 ركاب، رياضية", image: "https://i.ibb.co/hkcxB1n/INTRO-24-MB-C-Class.png" },
-    { name: "Mercedes viano ", price: 10000, details: "5 ركاب، تكنولوجيا متقدمة", image: "https://i.ibb.co/cch0FNm2/v-class.png" },
+    { name: "Mercedes viano ", price: 10000, details: "5 ركاب، تكنولوجيا متقدمة", image: "https://i.ibb.co/bM457kFS/16406944194361.png" },
     { name: "Jeep", price: 15000, details: "5 ركاب، أمان عالي", image: "https://i.ibb.co/NdW5tR37/2025-jeep-grand-cherokee-4-overland-032-pw7.png" },
-    { name: "Range Rover", price: 3500, details: "5 ركاب، فاخرة جدًا", image: "https://i.ibb.co/XrY1bVTN/d3fde177ea22f4701d59a12e21cb12fd.png" }
+    { name: "Range Rover", price: 20000, details: "5 ركاب، فاخرة جدًا", image: "https://i.ibb.co/h1HPV1JC/model2.png" }
   ]
 };
 
