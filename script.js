@@ -174,7 +174,6 @@ const cars = {
     { name: "Hyundai Elantra", price: 2000, details: "4 ركاب، موفرة", image: "https://i.ibb.co/q38Gjg92/hyundai-elantra-cn7-large.png" },
     { name: "Toyota Corolla", price: 2000, details: "4 ركاب، متينة", image: "https://i.ibb.co/jkrCQHwg/Black-1170x395.png" },
     { name: "Nissan Sunny", price: 1500, details: "4 ركاب، شبابية", image: "https://i.ibb.co/vCWphnhW/NISSAN-1-2-201526470-jpg-ximg-l-12-m-smart.png" }
-    { name: "Nissan Sunny", price: 1500, details: "4 ركاب، شبابية", image: "https://i.ibb.co/vCWphnhW/NISSAN-1-2-201526470-jpg-ximg-l-12-m-smart.png" }
   ],
   luxury: [
     { name: "Mercedes-Maybach", price: 15000, details: "5 ركاب، فخمة", image: "https://i.ibb.co/60vWGzBf/mercedes-maybach-s-class-Xanh-Nautic.png" },
